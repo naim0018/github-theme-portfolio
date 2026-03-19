@@ -1,6 +1,4 @@
-'use client';
 
-import React from 'react';
 import { BookMarked, Star, GitBranch } from 'lucide-react';
 
 const pinnedRepos = [

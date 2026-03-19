@@ -1,6 +1,5 @@
-'use client';
 
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export const ContributionGraph = () => {

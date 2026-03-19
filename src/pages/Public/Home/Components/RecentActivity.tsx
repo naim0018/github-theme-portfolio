@@ -1,6 +1,4 @@
-'use client';
 
-import React from 'react';
 import { GitCommit, GitPullRequest, MessageCircle, Star } from 'lucide-react';
 
 const activities = [

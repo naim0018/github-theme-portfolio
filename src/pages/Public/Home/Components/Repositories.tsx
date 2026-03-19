@@ -1,8 +1,6 @@
-'use client';
 
-import React, { useState } from 'react';
-import { BookMarked, Star, GitBranch, Search, ChevronDown, Filter } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { useState } from 'react';
+import { BookMarked, Star, GitBranch, Search, ChevronDown, } from 'lucide-react';
 
 const repositories = [
   { name: 'microservices-framework', desc: 'Production-ready microservices framework', lang: 'TypeScript', stars: 2400, forks: 156, updated: '2 hours ago' },

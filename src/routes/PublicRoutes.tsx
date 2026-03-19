@@ -1,4 +1,5 @@
-import Home from "@/pages/Public/Home/Home";
+import { lazy } from "react";
+const Home = lazy(() => import("@/pages/Public/Home/Home"));
 
 export const publicRoutes = [
   {

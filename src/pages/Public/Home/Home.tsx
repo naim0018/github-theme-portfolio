@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Header } from "./Components/Header";
 import { Sidebar } from "./Components/Sidebar";
 import { ContributionGraph } from "./Components/ContributionGraph";
