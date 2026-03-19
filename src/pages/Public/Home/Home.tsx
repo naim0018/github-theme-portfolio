@@ -15,7 +15,8 @@ import {
   BookOpen,
   BookMarked,
   LayoutGrid,
-  Package,
+  Code2,
+  History,
   Github,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -24,7 +25,6 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Home() {
   const [activeTab, setActiveTab] = useState("overview");
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
-
   const tabs = [
     {
       id: "overview",
@@ -43,9 +43,14 @@ export default function Home() {
       icon: <LayoutGrid className="w-4 h-4" />,
     },
     {
-      id: "packages",
-      label: "Packages",
-      icon: <Package className="w-4 h-4" />,
+      id: "skills",
+      label: "Skills",
+      icon: <Code2 className="w-4 h-4" />,
+    },
+    {
+      id: "experience",
+      label: "Experience",
+      icon: <History className="w-4 h-4" />,
     },
   ];
 
@@ -104,9 +109,31 @@ export default function Home() {
                   >
                     <ContributionGraph />
                     <PinnedRepositories />
-                    <TechnicalSkills />
-                    <ExperienceTimeline />
                     <RecentActivity />
+                  </motion.div>
+                )}
+
+                {activeTab === "skills" && (
+                  <motion.div
+                    key="skills"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <TechnicalSkills />
+                  </motion.div>
+                )}
+
+                {activeTab === "experience" && (
+                  <motion.div
+                    key="experience"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ExperienceTimeline />
                   </motion.div>
                 )}
 
@@ -158,30 +185,6 @@ export default function Home() {
                   </motion.div>
                 )}
 
-                {activeTab === "packages" && (
-                  <motion.div
-                    key="packages"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="github-card text-center py-24 flex flex-col items-center justify-center gap-6"
-                  >
-                    <div className="w-20 h-20 rounded-full bg-canvas-default border border-border-default flex items-center justify-center text-fg-muted">
-                      <Package className="w-10 h-10" />
-                    </div>
-                    <div className="max-w-md mx-auto">
-                      <h3 className="text-xl font-bold mb-3 text-fg-default">
-                        Publish your first package
-                      </h3>
-                      <p className="text-fg-muted text-sm leading-relaxed mb-8">
-                        Publish your packages to the GitHub Package Registry for
-                        better control over your software enterprise-wide.
-                      </p>
-                      <button className="github-btn-primary">Learn more</button>
-                    </div>
-                  </motion.div>
-                )}
               </AnimatePresence>
             </div>
           </div>

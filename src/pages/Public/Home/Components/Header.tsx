@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Github, Bell, Plus, ChevronDown, Search, Menu } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 export const Header = () => {
@@ -36,14 +35,7 @@ export const Header = () => {
             </div>
           </div>
 
-          {/* Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 ml-4">
-            <NavLink href="#overview" active>Overview</NavLink>
-            <NavLink href="#repositories">Repositories</NavLink>
-            <NavLink href="#projects">Projects</NavLink>
-            <NavLink href="#experience">Experience</NavLink>
-            <NavLink href="#achievements">Achievements</NavLink>
-          </nav>
+          {/* Nav Links Removed */}
         </div>
         
         <div className="flex items-center gap-2 sm:gap-3.5">
@@ -73,21 +65,7 @@ export const Header = () => {
   );
 };
 
-const NavLink = ({ href, children, active = false }: { href: string; children: React.ReactNode; active?: boolean }) => {
-  return (
-    <a 
-      href={href} 
-      className={cn(
-        "px-3 py-1.5 text-sm font-semibold transition-all flex items-center gap-2 rounded-md hover:bg-border-muted",
-        active 
-          ? "text-fg-default bg-border-muted" 
-          : "text-fg-muted hover:text-fg-default"
-      )}
-    >
-      {children}
-    </a>
-  );
-};
+
 
 const NavIconButton = ({ icon, badge = false }: { icon: React.ReactNode; badge?: boolean }) => (
   <button className="p-2 text-fg-muted hover:text-fg-default hover:bg-border-muted rounded-md transition-all relative group">
