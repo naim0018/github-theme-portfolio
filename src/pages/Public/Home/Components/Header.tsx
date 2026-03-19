@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Github, Bell, Plus, ChevronDown, Search, Menu } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Github, Bell, Plus, ChevronDown, Menu } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Header = () => {
   return (
@@ -11,17 +11,19 @@ export const Header = () => {
         <div className="flex items-center gap-4 lg:gap-6 flex-1">
           {/* Logo & Name */}
           <div className="flex items-center gap-2.5 group cursor-pointer">
-            <motion.div 
+            <motion.div
               whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.8, ease: "anticipate" }}
             >
               <Github className="w-8 h-8 text-fg-default group-hover:text-accent-fg transition-colors" />
             </motion.div>
-            <span className="font-bold text-lg tracking-tight hidden sm:block group-hover:text-accent-fg transition-colors">AlexDev</span>
+            <span className="font-bold text-lg tracking-tight hidden sm:block group-hover:text-accent-fg transition-colors">
+              AlexDev
+            </span>
           </div>
 
           {/* Quick Search - GitHub Style */}
-          <div className="hidden md:flex items-center flex-1 max-w-[320px] relative">
+          {/* <div className="hidden md:flex items-center flex-1 max-w-[320px] relative">
             <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
               <Search className="w-3.5 h-3.5 text-fg-muted" />
             </div>
@@ -33,24 +35,24 @@ export const Header = () => {
             <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
               <span className="text-[10px] font-bold border border-border-default px-1.5 rounded-md bg-border-muted text-fg-muted">/</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Nav Links Removed */}
         </div>
-        
+
         <div className="flex items-center gap-2 sm:gap-3.5">
           <div className="hidden sm:flex items-center gap-2 border-r border-border-default pr-4 mr-1">
             <NavIconButton icon={<Bell className="w-4 h-4" />} badge />
-            <div className="flex items-center gap-1 group cursor-pointer hover:bg-border-muted px-2 py-1 rounded-md transition-all">
+            {/* <div className="flex items-center gap-1 group cursor-pointer hover:bg-border-muted px-2 py-1 rounded-md transition-all">
               <Plus className="w-4 h-4 text-fg-muted" />
               <ChevronDown className="w-3 h-3 text-fg-muted opacity-50" />
-            </div>
+            </div> */}
           </div>
-          
+
           <div className="relative group cursor-pointer">
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
-              alt="Profile" 
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+              alt="Profile"
               className="w-8 h-8 rounded-full border border-border-default group-hover:border-accent-fg transition-all duration-300"
             />
             <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-success-fg border-2 border-canvas-default rounded-full" />
@@ -65,9 +67,13 @@ export const Header = () => {
   );
 };
 
-
-
-const NavIconButton = ({ icon, badge = false }: { icon: React.ReactNode; badge?: boolean }) => (
+const NavIconButton = ({
+  icon,
+  badge = false,
+}: {
+  icon: React.ReactNode;
+  badge?: boolean;
+}) => (
   <button className="p-2 text-fg-muted hover:text-fg-default hover:bg-border-muted rounded-md transition-all relative group">
     {icon}
     {badge && (

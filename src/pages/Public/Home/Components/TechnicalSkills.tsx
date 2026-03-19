@@ -191,8 +191,8 @@ export function TechnicalSkills() {
   const [activeView, setActiveView] = useState<'list' | 'grid'>('list');
 
   const allSkills = skillsData.flatMap((c) => c.skills);
-  const totalAvg = Math.round(allSkills.reduce((a, b) => a + b.level, 0) / allSkills.length);
-  const topSkills = [...allSkills].sort((a, b) => b.level - a.level).slice(0, 3);
+  // const totalAvg = Math.round(allSkills.reduce((a, b) => a + b.level, 0) / allSkills.length);
+  // const topSkills = [...allSkills].sort((a, b) => b.level - a.level).slice(0, 3);
 
   return (
     <div className="github-card">
