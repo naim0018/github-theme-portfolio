@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, Bell, Plus, ChevronDown, Menu } from "lucide-react";
+import { Github, Bell, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Header = () => {
